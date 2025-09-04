@@ -71,6 +71,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: #a7c7e7; /* Crystal blue para toda la pantalla */
 }
 
 h1 {
@@ -100,7 +101,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #a7c7e7; /* Crystal blue en modo claro */
   }
   a:hover {
     color: #747bff;
@@ -110,3 +111,80 @@ button:focus-visible {
   }
 }
 
+.login-bg {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* Hereda el crystal blue del body */
+}
+
+.login-card {
+    background: #87ceeb; /* Azul cielo */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 1.5px 3px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+    width: 320px;
+    transform: perspective(600px) rotateY(8deg) scale(1.03);
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.login-card:hover {
+    transform: perspective(600px) rotateY(0deg) scale(1.06);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.12);
+}
+
+.login-card h2 {
+    margin-bottom: 24px;
+    color: #232526;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f1f1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+
+.login-card input:focus {
+    box-shadow: 0 4px 16px 0 rgba(0, 150, 214, 0.25), 0 0 0 2px #0096d6;
+    background: #fff;
+    border: 1px solid #0096d6;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #0096d6; /* Azul acorde al azul cielo */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    /* Relieve */
+    box-shadow: 0 4px 0 #007bb5, 0 2px 8px rgba(0,0,0,0.13);
+    transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+    position: relative;
+    top: 0;
+}
+
+.login-card button:active {
+    /* Efecto de presionado */
+    top: 2px;
+    box-shadow: 0 2px 0 #007bb5, 0 1px 4px rgba(0,0,0,0.13);
+    background: #0080b3;
+}
+
+.login-card button:hover {
+    background: #00b0ff;
+    transform: scale(1.04);
+}
